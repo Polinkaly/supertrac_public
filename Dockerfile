@@ -8,7 +8,7 @@ WORKDIR /trac_deploy
 
 COPY .htpasswd .
 
-COPY Trac-1.7.1.dev0-py3-none-any.whl .
+COPY ./dist/Trac-1.7.1.dev0-py3-none-any.whl .
 
 RUN pip3 install Trac-1.7.1.dev0-py3-none-any.wh
 
