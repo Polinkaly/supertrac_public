@@ -14,8 +14,7 @@ RUN pip3 install Trac-1.7.1.dev0-py3-none-any.whl
 
 WORKDIR /trac_project
 
-RUN trac-admin /trac_project initenv 'Project1' 
-postgres://postgres:qwas@10.26.0.32/trac
+RUN trac-admin /trac_project initenv 'Project1' postgres://postgres:qwas@10.26.0.32/trac
 
 #RUN chown -R apache:apache /trac_project
 
