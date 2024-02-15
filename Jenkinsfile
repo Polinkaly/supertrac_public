@@ -1,6 +1,6 @@
 pipeline {
-    agent { label 'pyy' }
-    
+   agent { label 'pyy' }
+	
    environment {
         GIT_REPO = 'https://github.com/Polinkaly/supertrac_public.git'
         WORKDIR = '/home/jenkins/my_project'
@@ -72,7 +72,7 @@ pipeline {
             }
         }
 				
-		stage('Prepare and archive files') {
+	  stage('Prepare and archive files') {
 			steps {
 				script {
 				     sh "cd ${WORKDIR} && tar -czf package.tar.gz Dockerfile dist/*.whl"
@@ -90,7 +90,7 @@ pipeline {
 		    }
 		}
 		
-		stage('Deploy Docker image') {
+	    stage('Deploy Docker image') {
 			steps {
 				script {
 					sshagent([SSH_CREDENTIALS_ID]) {
