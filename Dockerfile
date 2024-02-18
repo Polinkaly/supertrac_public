@@ -8,12 +8,16 @@ WORKDIR /trac_deploy
 
 COPY .htpasswd .
 
-COPY ./dist/Trac-1.7.1.dev0-py3-none-any.whl .
+ADD start.sh /trac_deploy/start.sh 
+
+COPY Trac-1.7.1.dev0-py3-none-any.whl .
 
 RUN pip3 install Trac-1.7.1.dev0-py3-none-any.whl
 
-RUN trac-admin /trac_project initenv 'Project1' postgres://postgres:qwas@10.26.0.32/trac
+RUN trac-admin /trac_project initenv 'Project1' postgres://postgres:qwas@192.168.1.194/trac
 
-CMD ["tracd", "--port", "8000", "/trac_project"]
+ENTRYPOINT ["/bin/sh"]
+
+CMD ["/trac_deploy/start.sh"]
 
 EXPOSE 8000
