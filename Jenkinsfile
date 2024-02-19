@@ -71,7 +71,7 @@ pipeline {
       stage('Prepare and archive files') {
         steps {
           script {
-            sh "cd ${WORKDIR} && tar -czf package.tar.gz Dockerfile dist/*.whl"
+            sh "cd ${WORKDIR} && tar -czf package.tar.gz Dockerfile start.sh .htpasswd dist/*.whl"
           }
         }
       }
