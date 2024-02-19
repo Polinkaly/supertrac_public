@@ -1,4 +1,3 @@
-# Packages needed to create a release.
 setuptools
 wheel
 jinja2
