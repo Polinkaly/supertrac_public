@@ -1,6 +1,12 @@
-pipeline {
-  podTemplate {
-    node(POD_LABEL) {
+podTemplate(yaml: '''
+              apiVersion: v1
+              kind: Pod
+              spec:
+                containers:
+                - name: ubuntu
+                  image: ubuntu:20.04
+''') {
+  node(POD_LABEL) {
 
   environment {
     GIT_REPO = 'https://github.com/Polinkaly/supertrac_public.git'
@@ -105,5 +111,5 @@ pipeline {
         }
       }
     }
-    }}
+  }
 }
