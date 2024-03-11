@@ -1,3 +1,15 @@
+
+  
+def GIT_REPO = 'https://github.com/Polinkaly/supertrac_public.git'
+def WORKDIR = '/home'
+def DISTDIR = '/home/dist/*'
+def BUILDDIR = '/home/my_buld'
+def SSH_CREDENTIALS_ID = '40f198be-bb5c-48ef-a189-b0ed037086bf'
+def REMOTE_HOST = 'root@10.26.0.32'
+def REMOTE_DIR = '/root'
+def IMAGE_NAME = 'trac'
+def IMAGE_TAG = 'latest'
+
 podTemplate(yaml: '''
               apiVersion: v1
               kind: Pod
@@ -7,18 +19,6 @@ podTemplate(yaml: '''
                   image: ubuntu:latest
 ''') {
   node(POD_LABEL) {
-
-  environment {
-    GIT_REPO = 'https://github.com/Polinkaly/supertrac_public.git'
-    WORKDIR = '/home/jenkins/my_project'
-    DISTDIR = '/home/jenkins/my_project/dist/*'
-    BUILDDIR = '/home/jenkins/my_buld'
-    SSH_CREDENTIALS_ID = '40f198be-bb5c-48ef-a189-b0ed037086bf'
-    REMOTE_HOST = 'root@10.26.0.32'
-    REMOTE_DIR = '/root'
-    IMAGE_NAME = 'trac'
-    IMAGE_TAG = 'latest'
-  }
 
   stages {
       stage('Clean Workspace') {
