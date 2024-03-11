@@ -4,7 +4,7 @@ podTemplate(yaml: '''
               spec:
                 containers:
                 - name: ubuntu
-                  image: ubuntu:20.04
+                  image: ubuntu:latest
 ''') {
   node(POD_LABEL) {
 
