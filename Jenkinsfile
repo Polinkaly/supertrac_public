@@ -1,5 +1,6 @@
 pipeline {
-  agent { label 'pyy' }
+  podTemplate {
+    node(POD_LABEL) {
 
   environment {
     GIT_REPO = 'https://github.com/Polinkaly/supertrac_public.git'
@@ -104,4 +105,5 @@ pipeline {
         }
       }
     }
+    }}
 }
