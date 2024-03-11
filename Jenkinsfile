@@ -1,6 +1,4 @@
-podTemplate(containers: [
-    containerTemplate(name: 'ubuntu', image: 'ubuntu:latest', command: 'sleep', args: '99d'),
-  ]) {
+podTemplate{
 
     node(POD_LABEL) {
         stage('Get a Maven project') {
