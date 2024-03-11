@@ -20,7 +20,6 @@ podTemplate(yaml: '''
 ''') {
   node(POD_LABEL) {
 
-  stages {
       stage('Clean Workspace') {
         steps {
           script {
@@ -112,4 +111,3 @@ podTemplate(yaml: '''
       }
     }
   }
-}
