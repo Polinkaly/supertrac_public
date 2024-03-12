@@ -3,8 +3,8 @@ podTemplate(yaml: '''
     kind: Pod
     spec:
       containers:
-      - name: ubuntu
-        image: ubuntu:22.04
+      - name: python
+        image: python:3.8-alpine3.18
         command:
         - sleep
         args:
