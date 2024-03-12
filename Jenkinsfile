@@ -1,5 +1,5 @@
 podTemplate(containers: [
-    containerTemplate(name: 'python', image: 'polina/foragent', command: 'sleep', args: '99d')
+    containerTemplate(name: 'python', image: 'polina/foragent:1', command: 'sleep', args: '99d')
 
   ]) {
  node(POD_LABEL) {
