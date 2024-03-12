@@ -12,7 +12,7 @@ podTemplate{
     IMAGE_TAG = 'latest'
   }
 
-  stages {
+  
       stage('Clean Workspace') {
         steps {
           script {
@@ -101,7 +101,7 @@ podTemplate{
             }
           }
         }
-    }
+    
 }
 }
 }
