@@ -41,21 +41,21 @@ podTemplate(containers: [
       stage('Resolve dependencies') {
          container('python') {
             sh "cd ${WORKDIR} && python3 -m venv .venv"
-            sh "cd  ${WORKDIR} && source .venv/bin/activate && pip3 install -r requirements-release.txt"
+            sh "cd  ${WORKDIR} &&  . venv/bin/activate && pip3 install -r requirements-release.txt"
          }
       }
     
       stage('Run tests') {
         container('python') {
-            sh "cd  ${WORKDIR} && source .venv/bin/activate && python3 -c 'import trac.tests as test; test.test_suite()'"
+            sh "cd  ${WORKDIR} &&  . venv/bin/activate && python3 -c 'import trac.tests as test; test.test_suite()'"
         }
       }
     
       stage('Build application') {
         container('python') {
             sh "cd ${WORKDIR} && python3 -m venv .venv"
-            sh "cd  ${WORKDIR} && source .venv/bin/activate && pip3 install wheel"
-            sh "cd  ${WORKDIR} && source .venv/bin/activate && python3 setup.py bdist_wheel "
+            sh "cd  ${WORKDIR} &&  . venv/bin/activate && pip3 install wheel"
+            sh "cd  ${WORKDIR} &&  . venv/bin/activate && python3 setup.py bdist_wheel "
             sh "cp -rf ${DISTDIR} ${BUILDDIR}"
     
         }
