@@ -22,7 +22,7 @@ podTemplate(containers: [
             sh "apt update"
             sh "apt install -y git"
             sh "apt install -y python3"
-            sh "apt install python3.10-venv"
+            sh "apt install -y python3.10-venv"
     }
       }
       stage('Prepare Workspace') {
