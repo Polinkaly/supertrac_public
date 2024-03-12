@@ -4,7 +4,7 @@ podTemplate(yaml: '''
     spec:
       containers:
       - name: python
-        image: swapnalip/ubuntu-git:latest
+        image: jenkins/ssh-agent
         command:
         - sleep
         args:
