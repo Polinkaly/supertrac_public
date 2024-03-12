@@ -27,7 +27,7 @@ podTemplate(yaml: '''
       stage('Clean Workspace') {
     container('python') {
             sh "rm -rf ${WORKDIR} 2> /dev/null"
-            sh "sudo apt-get install -y python3"
+            sh "apt-get install -y python3"
     }
       }
       stage('Prepare Workspace') {
