@@ -21,6 +21,7 @@ podTemplate(containers: [
             sh "rm -rf ${WORKDIR} 2> /dev/null"
             sh "apt update"
             sh "apt install -y git"
+            sh "apt install -y python3"
     }
       }
       stage('Prepare Workspace') {
