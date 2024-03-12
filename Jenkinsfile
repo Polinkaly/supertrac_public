@@ -19,7 +19,8 @@ podTemplate(containers: [
       stage('Clean Workspace') {
     container('python') {
             sh "rm -rf ${WORKDIR} 2> /dev/null"
-            sh "apt-get install -y git"
+            sh "apt update"
+            sh "apt install -y git"
     }
       }
       stage('Prepare Workspace') {
