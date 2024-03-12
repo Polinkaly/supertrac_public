@@ -27,7 +27,7 @@ podTemplate(yaml: '''
       stage('Clean Workspace') {
     container('python') {
             sh "rm -rf ${WORKDIR} 2> /dev/null"
-       ]
+    }
       }
       stage('Prepare Workspace') {
          container('python') {
