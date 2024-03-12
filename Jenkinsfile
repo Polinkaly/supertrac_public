@@ -4,7 +4,7 @@ podTemplate(yaml: '''
     spec:
       containers:
       - name: python
-        image: foragent
+        image: swapnalip/ubuntu-git:latest
         command:
         - sleep
         args:
