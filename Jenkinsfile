@@ -4,7 +4,7 @@ podTemplate(yaml: '''
     spec:
       containers:
       - name: python
-        image: python:3.8-alpine3.18
+        image: ubuntu:22.04
         command:
         - sleep
         args:
