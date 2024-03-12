@@ -1,15 +1,7 @@
-podTemplate(yaml: '''
-    apiVersion: v1
-    kind: Pod
-    spec:
-      containers:
-      - name: python
-        image: ubuntu:latest
-        command:
-        - sleep
-        args:
-        - 99d
-''') {
+podTemplate(containers: [
+    containerTemplate(name: 'python', image: 'ubuntu:22.04', command: 'sleep', args: '99d')
+
+  ]) {
  node(POD_LABEL) {
     
     def GIT_REPO = 'https://github.com/Polinkaly/supertrac_public.git'
