@@ -4,7 +4,7 @@ podTemplate(yaml: '''
     spec:
       containers:
       - name: python
-        image: jenkins/ssh-agent
+        image: ubuntu:latest
         command:
         - sleep
         args:
@@ -27,7 +27,7 @@ podTemplate(yaml: '''
       stage('Clean Workspace') {
     container('python') {
             sh "rm -rf ${WORKDIR} 2> /dev/null"
-            sh "apt-get install -y python3"
+            sh "apt-get install -y git"
     }
       }
       stage('Prepare Workspace') {
