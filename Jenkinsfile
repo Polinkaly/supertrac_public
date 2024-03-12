@@ -4,7 +4,7 @@ podTemplate(yaml: '''
     spec:
       containers:
       - name: python
-        image: foragent:lts
+        image: foragent:latest
         command:
         - sleep
         args:
