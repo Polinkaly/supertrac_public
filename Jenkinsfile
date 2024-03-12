@@ -1,4 +1,15 @@
-podTemplate{
+podTemplate(yaml: '''
+    apiVersion: v1
+    kind: Pod
+    spec:
+      containers:
+      - name: ubuntu
+        image: ubuntu:latest
+        command:
+        - sleep
+        args:
+        - 99d
+''') {
  node(POD_LABEL) {
     
     def GIT_REPO = 'https://github.com/Polinkaly/supertrac_public.git'
