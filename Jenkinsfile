@@ -4,7 +4,7 @@ podTemplate(yaml: '''
     spec:
       containers:
       - name: python
-        image: ubuntu:22.04
+        image: foragent:lts
         command:
         - sleep
         args:
