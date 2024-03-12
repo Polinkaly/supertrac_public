@@ -8,7 +8,6 @@ podTemplate(containers: [
     def WORKDIR = '/home/jenkins/my_project'
     def DISTDIR = '/home/jenkins/my_project/dist/*'
     def BUILDDIR = '/home/jenkins/my_buld'
-    def SSH_CREDENTIALS_ID = '40f198be-bb5c-48ef-a189-b0ed037086bf'
     def REMOTE_HOST = 'root@10.26.0.32'
     def REMOTE_DIR = '/root'
     def IMAGE_NAME = 'trac'
